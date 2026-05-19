@@ -16,7 +16,7 @@ async fn handle_connection(addr: SocketAddr, mut ws_stream: WebSocketStream<TcpS
                     Some(Ok(msg)) => {
                         if let Some(text) = msg.as_text() {
                             println!("From client {addr:?}: {text:?}");
-                            bcast_tx.send(text.to_string()).unwrap();
+                            bcast_tx.send(format!("{addr}: {text}")).unwrap();
                         }
                     }
                     _ => break,
