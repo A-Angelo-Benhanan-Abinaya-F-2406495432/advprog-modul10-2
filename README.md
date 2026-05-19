@@ -1,10 +1,10 @@
 ### 2.1 Original Code
 
 Server:
-![Server](assets/2.1-client2.png)
+![Server](assets/2.1-server.png)
 Client:
 1. ![Client 1](assets/2.1-client1.png)
-2. ![Client 1](assets/2.1-server.png)
+2. ![Client 1](assets/2.1-client2.png)
 3. ![Client 1](assets/2.1-client3.png)
 
 How to run:
