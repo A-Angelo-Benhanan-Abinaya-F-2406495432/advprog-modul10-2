@@ -14,3 +14,16 @@ How to run:
 When each client connects, the server logs the new connection with its assigned port (62439, 62460, 62467).
 When a client types a message and presses Enter, the message is sent to the server over a WebSocket connection. The server logs it and broadcasts it to all connected clients.
 Each client therefore sees every message sent by any participant, regardless of who sent it.
+
+### 2.2 Modifying Port
+
+Server:
+![Server](assets/2.2-server.png)
+Client:
+1. ![Client 1](assets/2.2-client1.png)
+2. ![Client 1](assets/2.2-client2.png)
+3. ![Client 1](assets/2.2-client3.png)
+
+Two files need to be modified since both sides of the connection must agree on the same port; server.rs and client.rs.
+Since the WebSocket connection is a two-party handshake over TCP where the server binds and listens on a specific port and the client must dial the exact same address, if only one side is updated, the client would attempt to connect to a port nobody is listening on and the connection would be refused.
+
